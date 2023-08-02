@@ -7,9 +7,9 @@
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "eslint -c .eslintrc --ext .ts ./src",
-    "start": "yarn build && electron ./out/main.js",
-    "app:pack": "yarn electron-builder --publish never",
-    "app:dist": "yarn electron-builder --publish always",
+    "start": "npm run build && electron ./out/main.js",
+    "app:pack": "electron-builder --publish never",
+    "app:dist": "electron-builder --publish always",
     "postinstall": "electron-builder install-app-deps && npm rebuild --platform=darwin --arch=arm64 sharp && npm rebuild --platform=darwin --arch=x64 sharp"
   },
   "repository": "https://github.com/electron/electron-quick-start-typescript",
