@@ -1,8 +1,10 @@
 import { app, BrowserWindow } from "electron";
 import * as path from "path";
 import { autoUpdater } from 'electron-updater';
-// import * as sqlite3 from "sqlite3"
 import * as permissions from "node-mac-permissions";
+import * as sharp from 'sharp'
+
+const sharpStream = sharp({ failOn: 'none' }); // Dummy usage of Sharp in the code
 
 function createWindow() {
   // Create the browser window.

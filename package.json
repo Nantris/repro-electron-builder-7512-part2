@@ -7,10 +7,10 @@
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "eslint -c .eslintrc --ext .ts ./src",
-    "start": "pnpm build && electron ./out/main.js",
-    "app:pack": "pnpm electron-builder --publish never",
-    "app:dist": "pnpm electron-builder --publish always",
-    "postinstall": "electron-builder install-app-deps"
+    "start": "yarn build && electron ./out/main.js",
+    "app:pack": "yarn electron-builder --publish never",
+    "app:dist": "yarn electron-builder --publish always",
+    "postinstall": "electron-builder install-app-deps && npm rebuild --platform=darwin --arch=arm64 sharp && npm rebuild --platform=darwin --arch=x64 sharp"
   },
   "repository": "https://github.com/electron/electron-quick-start-typescript",
   "keywords": [
@@ -30,7 +30,7 @@
     "@types/node": "^18.7.4",
     "@typescript-eslint/eslint-plugin": "^4.29.2",
     "@typescript-eslint/parser": "^4.29.2",
-    "electron": "^13.1.7",
+    "electron": "^23.0.0",
     "electron-builder": "^24.1.2",
     "eslint": "^7.32.0",
     "lazy-val": "^1.0.5",
@@ -39,6 +39,7 @@
   "dependencies": {
     "electron-log": "^4.4.1",
     "electron-updater": "^5",
-    "node-mac-permissions": "^2.3.0"
+    "node-mac-permissions": "^2.3.0",
+    "sharp": "^0.32.0"
   }
 }
